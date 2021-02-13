@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <title>Form Validation</title>
+</head>
+
+<body>
+  <!-- Alert section begins here. -->
+  <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congrats!!!</strong> Your form has been validated and submitted succesfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <!-- => The form begins here. -->
+  <div class="container my-5">
+    <h3 class="my-3">Sample Form</h3>
+    <form>
+
+      <!-- Input tag for the name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Mark Zukerberg">
+      </div>
+
+      <!-- Input tag for an email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Your email</label>
+        <input type="text" class="form-control" id="email" placeholder="mark4532@facebook.com">
+      </div>
+
+      <!-- Select your choice of vehicle -->
+      <label for="vehicle" class="form-label">Select a vehicle of your choice</label>
+      <input class="form-control" list="vehicleOptions" id="vehicle" placeholder="Type to search...">
+      <datalist id="vehicleOptions">
+        <option value="Audi R8">
+        <option value="Lamborghini Avantador">
+        <option value="Ford Mustang">
+        <option value="Chevrolet Camaro">
+        <option value="Tata Nano">
+      </datalist>
+
+      <!-- Input tag for phone number -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Enter phone number</label>
+        <input class="form-control" id="phone">
+      </div>
+
+      <!-- Text area for address -->
+      <div class="mb-3">
+        <label for="address" class="form-label">Enter Your Address</label>
+        <textarea class="form-control" id="address" rows="3"></textarea>
+      </div>
+
+      <!-- Text area for description or message starts here. -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Any other message</label>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary btn-sm my-3">Submit</button>
+    </form>
+    <!-- => Form ends here. -->
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+  <script src="/JS/app.js"></script>
+</body>
+
+</html>
