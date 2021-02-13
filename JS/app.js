@@ -61,15 +61,20 @@ phone.addEventListener('blur', () => {
 //Handling submit button
 let submit = document.getElementById('submit');
 submit.addEventListener('click', (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
+    let alertBox = document.getElementById('alertBox');
 
     if (validEmail && validPhoneNumber && validUserName) {
-        let alert = document.getElementById('alert');
-        alert.classList.add("show");
+        alertBox.innerHTML = `<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Congrats!!!</strong> Your form has been validated and submitted succesfully.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`;
     }
     else {
-        let alert2 = document.getElementById('alert2');
-        alert2.classList.add("show");
+        alertBox.innerHTML = `<div id="alert2" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error!!!</strong> Please enter valid informations before submitting your form.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`;
     }
 });
 
