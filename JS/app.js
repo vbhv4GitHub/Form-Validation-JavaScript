@@ -8,54 +8,34 @@ let validUserName = false;
 let validEmail = false;
 let validPhoneNumber = false;
 
-// Adding event listners
-username.addEventListener('blur', () => {
-    // console.log("Name is blurred.");
-    //validate name here
-    let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,14}$/;
-    let str = username.value;
-    console.log(regex, str);
-    if (regex.test(str)) {
-        // console.log("It matched.");
-        username.classList.remove('is-invalid');
-        validUserName = true;
+// => Function to validate any data: Takes two parameters --> Regular Expression and documentID variable.
+const validate = function (docID, regex) {
+    let string = docID.value;
+    if (regex.test(string)) {
+        docID.classList.remove('is-invalid');
+        return true;
     }
     else {
-        // console.log("No match.");
-        username.classList.add('is-invalid');
-        validUserName = false;
+        docID.classList.add('is-invalid');
+        return false;
     }
+}
+
+// Adding event listners
+username.addEventListener('blur', () => {
+    let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,14}$/;
+    validUserName = validate(username, regex); // Calling validate function for the username verification.
+
 });
 
 email.addEventListener('blur', () => {
-    // console.log("Email is blurred.");
-    //validate email here
     let regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    let str = email.value;
-    console.log(regex, str);
-    if (regex.test(str)) {
-        email.classList.remove('is-invalid');
-        validEmail = true;
-    }
-    else {
-        email.classList.add('is-invalid');
-        validEmail = false;
-
-    }
+    validEmail = validate(email, regex);
 });
 
 phone.addEventListener('blur', () => {
     let regex = /^\d{10}$/;
-    let str = phone.value;
-    console.log(regex, str);
-    if (regex.test(str)) {
-        phone.classList.remove('is-invalid');
-        validPhoneNumber = true;
-    }
-    else {
-        phone.classList.add('is-invalid');
-        validPhoneNumber = false;
-    }
+    validPhoneNumber = validate(phone, regex);
 });
 
 //Handling submit button
