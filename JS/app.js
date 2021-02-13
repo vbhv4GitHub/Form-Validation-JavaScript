@@ -23,6 +23,7 @@ username.addEventListener('blur', () => {
     else {
         // console.log("No match.");
         username.classList.add('is-invalid');
+        validUserName = false;
     }
 });
 
@@ -38,6 +39,8 @@ email.addEventListener('blur', () => {
     }
     else {
         email.classList.add('is-invalid');
+        validEmail = false;
+
     }
 });
 
@@ -51,13 +54,14 @@ phone.addEventListener('blur', () => {
     }
     else {
         phone.classList.add('is-invalid');
+        validPhoneNumber = false;
     }
 });
 
 //Handling submit button
 let submit = document.getElementById('submit');
 submit.addEventListener('click', (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
     if (validEmail && validPhoneNumber && validUserName) {
         let alert = document.getElementById('alert');
